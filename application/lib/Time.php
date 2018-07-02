@@ -106,15 +106,13 @@ class Time
      */
     public static function timeStampToHour($time = 0)
     {
-        if ($time <= 0)
-            $time = time();
         $is_right = self::isPositiveInteger($time);
         if ($is_right){
             $hourTime = intval($time / 3600)  . ".". intval(($time % 3600) / 3600*10);
             $hourTime = floatval($hourTime);
             return $hourTime;
         }else{
-            return false;
+            return 0;
         }
 
     }

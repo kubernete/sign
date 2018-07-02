@@ -135,14 +135,22 @@ class RankingService
 
             $arrays[$i] = $array;
         }
+        $newArrays = [];
         foreach ($arrays as $key => $array)
         {
+            $newArrays[] =
+                [
+                    'portraitUrl' => $array['portraitUrl'],
+                    'placing' => $key + 1,
+                    'hours' =>  Time::timeStampToHour($array['hours'])
+                ];
 
-            $array['placing'] = $key + 1;
-            $array['hours'] = Time::timeStampToHour($array['hours']);
+//            $array['placing'] = $key + 1;
+//            $array['hours'] = Time::timeStampToHour($array['hours']);
+
         }
 
-        return $arrays;
+        return $newArrays;
     }
 
 

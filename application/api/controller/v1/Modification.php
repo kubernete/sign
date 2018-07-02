@@ -17,7 +17,7 @@ class Modification extends BaseAuth
 {
     /**
      * 修改用户信息
-     * @return array
+     * @return string
      */
     public function infoChange()
     {
@@ -27,7 +27,7 @@ class Modification extends BaseAuth
         // 修改用户信息, 需要用户和参数
         $data = $modify->modifyBaseInfo($param, $this->user);
 
-        return $data;
+        return 'yes';
 
     }
 }
