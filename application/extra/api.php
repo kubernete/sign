@@ -7,7 +7,7 @@
  */
 
 return [
-    'api_url' => 'https://api.xnnyezi.com', // 最后一个字符不需要斜杠,后面参数需要自己添加
+    'api_url' => '***', // 最后一个字符不需要斜杠,后面参数需要自己添加
     'source_path' => '/source/', // 资源的请求路径
     'api_path' => '/api/',  // api的请求路径
 ];
