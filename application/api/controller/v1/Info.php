@@ -26,7 +26,7 @@ class Info extends BaseAuth
 
         if (!empty($user['birthday']))
         {
-            $user['birthday'] = date('Y-m-d H:i:s', $user['birthday']);
+            $user['birthday'] = date('Y-m-d', $user['birthday']);
         }
         return $user;
     }
