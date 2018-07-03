@@ -73,20 +73,7 @@ class Index extends Controller
 
     public function timeGet()
     {
-        $time = date('Y-m-d',strtotime("20180702"));
 
-        $sign_times = model('sign')
-            ->where('user_id' , '=', 1)
-            ->whereTime('sign_time', 'week')
-
-            ->select();
-        foreach ($sign_times as $sign_time)
-        {
-            $sign_time['create_time'] = date('Y-m-d H:i:s', $sign_time['create_time']);
-            $sign_time['update_time'] = date('Y-m-d H:i:s', $sign_time['update_time']);
-        }
-
-        return $sign_times; //
     }
 
 }

@@ -9,7 +9,7 @@
 return [
     'host' =>  'smtp.163.com',
     'port' => 25,
-    'username' => '***',
-    'password' => '***',
+    'username' => 'kldehaizi@163.com',
+    'password' => 'swoole123',
 
 ];
