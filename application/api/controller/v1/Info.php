@@ -23,6 +23,11 @@ class Info extends BaseAuth
             ->field(['nickname', 'sex', 'birthday', 'address',
                 'signature', 'school', 'department', 'major', 'team', 'num'])
             ->find();
+
+        if (!empty($user['birthday']))
+        {
+            $user['birthday'] = date('Y-m-d H:i:s', $user['birthday']);
+        }
         return $user;
     }
 
