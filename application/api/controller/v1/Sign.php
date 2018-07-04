@@ -150,4 +150,30 @@ class Sign extends BaseAuth
     }
 
 
+    public function thisLastWeekSign()
+    {
+        $param = request()->param();
+
+        if(!array_key_exists('time',$param) || strlen($param['time']) != 1)
+        {
+           return 'no';
+        }
+        switch ($param['time'])
+        {
+            // 本周
+            case 0:
+                $everyDay = SignService::getWeekSignEveryDay($this->user['id'],0);
+                break;
+            // 上周
+            case 1:
+                $everyDay = SignService::getWeekSignEveryDay($this->user['id'],1);
+                break;
+            default:
+                return 'no';
+        }
+        return $everyDay;
+
+    }
+
+
 }

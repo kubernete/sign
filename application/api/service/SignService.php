@@ -129,7 +129,80 @@ class SignService
 
     }
 
+    public static function getWeekSignEveryDay($id, $time = 0)
+    {
 
+        if ($time == 0)
+        {
+           $newTime = self::thisWeekEveryTime($id);
+        }elseif ($time == 1)
+        {
+            $newTime = self::lastWeekEveryTime($id);
+        }else{
+            return 'no';
+        }
+
+        return $newTime;
+    }
+
+    public static function thisWeekEveryTime($id)
+    {
+        $weeks = Time::getAllEnglishWeek();
+        $newTime = [];
+        $signs = model('sign')
+            ->where('user_id', '=', $id)
+            ->whereTime('sign_time','this week')
+            ->order(['id' => 'aes'])
+            ->select();
+        foreach ($weeks as $week)
+        {
+            $tmpTotal = 0;
+            foreach ($signs as $sign)
+            {
+                if ($sign['leave_time'] > 0
+                    && $sign['sign_time'] > strtotime('this week '.$week.' 00:00:00')
+                    && $sign['sign_time'] < strtotime('this week '.$week.' 23:59:59'))
+                {
+                    $cha = $sign['leave_time'] - $sign['sign_time'];
+                    $tmpTotal = $tmpTotal + $cha;
+                }
+
+            }
+
+            $newTime[] = $tmpTotal?Time::timeStampToHour($tmpTotal):0;
+        }
+
+        return $newTime;
+    }
+
+    public static function lastWeekEveryTime($id)
+    {
+        $weeks = Time::getAllEnglishWeek();
+        $newTime = [];
+        $signs = model('sign')
+            ->where('user_id', '=', $id)
+            ->whereTime('sign_time','last week')
+            ->order(['id' => 'aes'])
+            ->select();
+        foreach ($weeks as $week)
+        {
+            $tmpTotal = 0;
+            foreach ($signs as $sign)
+            {
+                if ($sign['leave_time'] > 0
+                    && $sign['sign_time'] > strtotime('this week '.$week.' 00:00:00')
+                    && $sign['sign_time'] < strtotime('this week '.$week.' 23:59:59'))
+                {
+                    $cha = $sign['leave_time'] - $sign['sign_time'];
+                    $tmpTotal = $tmpTotal + $cha;
+                }
+
+            }
+            $newTime[] = $tmpTotal?$tmpTotal:0;
+        }
+
+        return $newTime;
+    }
 
 
 
