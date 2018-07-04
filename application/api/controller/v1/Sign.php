@@ -81,7 +81,12 @@ class Sign extends BaseAuth
             return '离开错误';
         }
 
-        return 'yes';
+        $newLeave = model('sign')
+            ->where(['id' => $id])
+            ->find();
+        $newTime = $newLeave->leave_time - $newLeave->sign_time;
+
+        return $newTime;
 
     }
 
