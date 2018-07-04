@@ -140,7 +140,7 @@ class RankingService
         {
             $newArrays[] =
                 [
-                    'portraitUrl' => $array['portraitUrl'],
+                    'portraitUrl' => config('api.api_url').config('api.source_path').$array['portraitUrl'],
                     'placing' => $key + 1,
                     'hours' =>  Time::timeStampToHour($array['hours'])
                 ];
