@@ -45,12 +45,12 @@ class Modify
             }
         }
 
-        if (!empty($param['portraitByte']))
+        if (!empty($param['info']['portraitByte']))
         {
-            $xml = getimagesizefromstring($param['portraitByte']);
+            $xml = getimagesizefromstring($param['info']['portraitByte']);
             if ($xml)
             {
-                $saveName = FileUpload::binaryStringToFile($param['portraitByte']);
+                $saveName = FileUpload::binaryStringToFile($param['info']['portraitByte']);
                 if ($saveName){
                     $data['image'] = $saveName;
                 }
@@ -58,63 +58,64 @@ class Modify
         }
 
         // 昵称
-        if(!empty($param['nickname']))
+        if(!empty($param['info']['nickname']))
         {
-            $data['nickname'] = $param['nickname'];
+            $data['nickname'] = $param['info']['nickname'];
         }
 
         // 性别
-        if(!empty($param['sex']))
+        if(!empty($param['info']['sex']))
         {
-            $data['sex'] = $param['sex'];
+            $data['sex'] = $param['info']['sex'];
         }
 
         // 生日
-        if(!empty($param['birthday']))
+        if(!empty($param['info']['birthday']))
         {
-            $data['birthday'] = $param['birthday'];
+
+            $data['birthday'] = strtotime($param['info']['birthday']);
         }
 
         // 所在地
-        if(!empty($param['address']))
+        if(!empty($param['info']['address']))
         {
-            $data['address'] = $param['address'];
+            $data['address'] = $param['info']['address'];
         }
 
         // 签名
-        if(!empty($param['signature']))
+        if(!empty($param['info']['signature']))
         {
-            $data['signature'] = $param['signature'];
+            $data['signature'] = $param['info']['signature'];
         }
 
         // 学校
-        if(!empty($param['school']))
+        if(!empty($param['info']['school']))
         {
-            $data['school'] = $param['school'];
+            $data['school'] = $param['info']['school'];
         }
 
         // 学院
-        if(!empty($param['department']))
+        if(!empty($param['info']['department']))
         {
-            $data['department'] = $param['department'];
+            $data['department'] = $param['info']['department'];
         }
 
         // 专业
-        if(!empty($param['major']))
+        if(!empty($param['info']['major']))
         {
-            $data['major'] = $param['sex'];
+            $data['major'] = $param['info']['sex'];
         }
 
         // 班级
-        if(!empty($param['team']))
+        if(!empty($param['info']['team']))
         {
-            $data['team'] = $param['team'];
+            $data['team'] = $param['info']['team'];
         }
 
         // 学号
-        if(!empty($param['num']))
+        if(!empty($param['info']['num']))
         {
-            $data['num'] = $param['num'];
+            $data['num'] = $param['info']['num'];
         }
 
 
