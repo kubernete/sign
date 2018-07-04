@@ -30,7 +30,7 @@ class SignService
 
         $signs = model('sign')
             ->where(['user_id' => $uid])
-            ->whereTime('create_time', 'between',
+            ->whereTime('sign_time', 'between',
                 [$year.'-'.$month.'-1 00:00:00', $year.'-'.$month.'-'.$day.' 23:59:59'])
             ->select();
         $manyDays = [];
@@ -113,7 +113,7 @@ class SignService
         $time = date('Y-m-d',strtotime($time));
         $signs = model('sign')
             ->where('user_id', '=', $uid)
-            ->whereTime('create_time','between',[$time.' 00:00:00', $time.' 23:59:59'])
+            ->whereTime('sign_time','between',[$time.' 00:00:00', $time.' 23:59:59'])
             ->order(['id' => 'aes'])
             ->select();
 

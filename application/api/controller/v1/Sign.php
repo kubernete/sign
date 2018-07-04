@@ -140,12 +140,19 @@ class Sign extends BaseAuth
         }
 
         $list = SignService::listOutSignDays($this->user['id'], $month, $year);
-        $list = array_unique($list);
-        if (empty($list))
+        $myLists = array_unique($list);
+        $newList = [];
+        foreach ($myLists as $myList)
+        {
+            $newList[] = $myList;
+        }
+
+
+        if (empty($newList))
         {
             return 'no';
         }
-        return $list;
+        return $newList;
 
     }
 
