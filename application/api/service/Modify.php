@@ -34,7 +34,8 @@ class Modify
         }*/
 
 
-        $xmlStr = file_get_contents('php://input');
+        $xmlStr = file_get_contents('php://input')?file_get_contents('php://input'):0;
+
         $xml = getimagesizefromstring($xmlStr);
 
         if ($xml)
@@ -119,11 +120,16 @@ class Modify
             $data['num'] = $param['num'];
         }
 
+        if (!$data)
+        {
+            $data = file_get_contents('php://input');
+        }
 
         try{
             $userModel = new User();
             $id = $userModel->save($data, ['id' => $user['id']]);
-            if (!$id){
+            if (!$id)
+            {
                 throw new ParameterException([
                     'msg' => '修改数据失败',
                     'code' => 404
