@@ -64,11 +64,13 @@ class Modify
         }
 
         // 性别
-        if($param['sex'] == 0 || $param['sex'] == 1)
-        {
-            $data['sex'] =intval($param['sex']);
+        if (!empty($param['sex']))
+        {    // 1:男 2:女
+            if ($param['sex'] == 1 || $param['sex'] == 2)
+            {
+                $data['sex'] = intval($param['sex']);
+            }
         }
-
         // 生日
         if(!empty($param['birthday']))
         {
@@ -133,7 +135,6 @@ class Modify
         }
 
         return $data;
-
 
     }
 
