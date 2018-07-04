@@ -45,12 +45,12 @@ class Modify
             }
         }
 
-        if (!empty($param['info']['portraitByte']))
+        if (!empty($param['portraitByte']))
         {
-            $xml = getimagesizefromstring($param['info']['portraitByte']);
+            $xml = getimagesizefromstring($param['portraitByte']);
             if ($xml)
             {
-                $saveName = FileUpload::binaryStringToFile($param['info']['portraitByte']);
+                $saveName = FileUpload::binaryStringToFile($param['portraitByte']);
                 if ($saveName){
                     $data['image'] = $saveName;
                 }
