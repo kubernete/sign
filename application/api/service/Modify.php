@@ -58,63 +58,63 @@ class Modify
         }
 
         // 昵称
-        if(!empty($param['info']['nickname']))
+        if(!empty($param['nickname']))
         {
-            $data['nickname'] = $param['info']['nickname'];
+            $data['nickname'] = $param['nickname'];
         }
 
         // 性别
-        if(!empty($param['info']['sex']))
+        if(!empty($param['sex']))
         {
-            $data['sex'] = $param['info']['sex'];
+            $data['sex'] = $param['sex'];
         }
 
         // 生日
-        if(!empty($param['info']['birthday']))
+        if(!empty($param['birthday']))
         {
-            $data['birthday'] = strtotime($param['info']['birthday']);
+            $data['birthday'] = strtotime($param['birthday']);
         }
 
         // 所在地
-        if(!empty($param['info']['address']))
+        if(!empty($param['address']))
         {
-            $data['address'] = $param['info']['address'];
+            $data['address'] = $param['address'];
         }
 
         // 签名
-        if(!empty($param['info']['signature']))
+        if(!empty($param['signature']))
         {
-            $data['signature'] = $param['info']['signature'];
+            $data['signature'] = $param['signature'];
         }
 
         // 学校
-        if(!empty($param['info']['school']))
+        if(!empty($param['school']))
         {
-            $data['school'] = $param['info']['school'];
+            $data['school'] = $param['school'];
         }
 
         // 学院
-        if(!empty($param['info']['department']))
+        if(!empty($param['department']))
         {
-            $data['department'] = $param['info']['department'];
+            $data['department'] = $param['department'];
         }
 
         // 专业
-        if(!empty($param['info']['major']))
+        if(!empty($param['major']))
         {
-            $data['major'] = $param['info']['sex'];
+            $data['major'] = $param['major'];
         }
 
         // 班级
-        if(!empty($param['info']['team']))
+        if(!empty($param['team']))
         {
-            $data['team'] = $param['info']['team'];
+            $data['team'] = $param['team'];
         }
 
         // 学号
-        if(!empty($param['info']['num']))
+        if(!empty($param['num']))
         {
-            $data['num'] = $param['info']['num'];
+            $data['num'] = $param['num'];
         }
 
 
