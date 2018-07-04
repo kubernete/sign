@@ -32,7 +32,7 @@ Route::put('api/:version/password/verification' ,'api/:version.Login/verificatio
 Route::put('api/:version/nickname/setting' ,'api/:version.Login/nicknameSet'); // 昵称设置
 
 
-Route::put('api/:version/info/modification', 'api/:version.Modification/infoChange'); // 用户信息修改
+Route::post('api/:version/info/modification', 'api/:version.Modification/infoChange'); // 用户信息修改
 
 // 退出登录
 Route::put('api/:version/token/null', 'api/:version.Cancel/cancelToken');
@@ -41,6 +41,7 @@ Route::post('api/:version/coming', 'api/:version.Sign/toSign'); // 签到
 Route::put('api/:version/leaving', 'api/:version.Sign/toLeave'); // 离开
 Route::get('api/:version/day/details', 'api/:version.Sign/getDaySignSituation'); // 查询日签到详情
 Route::get('api/:version/month/days', 'api/:version.Sign/comeDays'); // 查询某年某月有哪些天签到
+Route::get('api/:version/week/sign', 'api/:version.Sign/thisLastWeekSign'); // 本周或者上周签到
 
 // 动态
 Route::get('api/:version/dynamic/all', 'api/:version.Dynamic/allDynamic'); // 查询动态列表
