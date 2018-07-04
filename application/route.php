@@ -32,7 +32,7 @@ Route::put('api/:version/password/verification' ,'api/:version.Login/verificatio
 Route::put('api/:version/nickname/setting' ,'api/:version.Login/nicknameSet'); // 昵称设置
 
 
-Route::post('api/:version/info/modification', 'api/:version.Modification/infoChange'); // 用户信息修改
+Route::put('api/:version/info/modification', 'api/:version.Modification/infoChange'); // 用户信息修改
 
 // 退出登录
 Route::put('api/:version/token/null', 'api/:version.Cancel/cancelToken');

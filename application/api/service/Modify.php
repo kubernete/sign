@@ -64,9 +64,9 @@ class Modify
         }
 
         // 性别
-        if(!empty($param['sex']))
+        if($param['sex'] == 0 || $param['sex'] == 1)
         {
-            $data['sex'] = $param['sex'];
+            $data['sex'] =intval($param['sex']);
         }
 
         // 生日
