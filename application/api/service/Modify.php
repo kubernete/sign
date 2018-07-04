@@ -72,7 +72,7 @@ class Modify
         // 生日
         if(!empty($param['birthday']))
         {
-            $data['birthday'] = strtotime($param['birthday']);
+            $data['birthday'] = $param['birthday'];
         }
 
         // 所在地
