@@ -120,10 +120,7 @@ class Modify
             $data['num'] = $param['num'];
         }
 
-        if (!$data)
-        {
-            $data = file_get_contents('php://input');
-        }
+
 
         try{
             $userModel = new User();
