@@ -13,7 +13,18 @@ class Cancel extends BaseAuth
 {
     public function cancelToken()
     {
-        $this->user['token'] = null;
+        $this->user['token'] = '';
+        try{
+            $u = model('user')->save(['token' => $this->user['token']], ['id' => $this->user['id']]);
+            if (!$u)
+            {
+                return 'no';
+            }
+        }catch (\Exception $e)
+        {
+            return 'no';
+        }
+
         return 'yes';
     }
 }
