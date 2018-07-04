@@ -72,7 +72,6 @@ class Modify
         // 生日
         if(!empty($param['info']['birthday']))
         {
-
             $data['birthday'] = strtotime($param['info']['birthday']);
         }
 
