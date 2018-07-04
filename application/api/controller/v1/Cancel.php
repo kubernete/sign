@@ -13,6 +13,7 @@ class Cancel extends BaseAuth
 {
     public function cancelToken()
     {
-
+        $this->user['token'] = null;
+        return 'yes';
     }
 }

@@ -34,6 +34,8 @@ Route::put('api/:version/nickname/setting' ,'api/:version.Login/nicknameSet'); /
 
 Route::put('api/:version/info/modification', 'api/:version.Modification/infoChange'); // 用户信息修改
 
+// 退出登录
+Route::put('api/:version/token/null', 'api/:version.Cancel/cancelToken');
 
 Route::post('api/:version/coming', 'api/:version.Sign/toSign'); // 签到
 Route::put('api/:version/leaving', 'api/:version.Sign/toLeave'); // 离开
