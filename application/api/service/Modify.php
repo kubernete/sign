@@ -129,7 +129,7 @@ class Modify
             }
 
         }catch (\Exception $e){
-            throw new Exception();
+            return 'no';
         }
 
         return $data;
