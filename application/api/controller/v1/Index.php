@@ -43,8 +43,7 @@ class Index extends Controller
 
     public function test()
     {
-//        $id = 0;
-//        return captcha_src($id);
+
 
 
 
