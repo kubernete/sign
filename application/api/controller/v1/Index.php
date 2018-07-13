@@ -61,7 +61,6 @@ class Index extends Controller
 //            Cache::get($phone);
           $day = model('daytime')->field(['intraday'])->find();
         return $day;
-
 //        $user = model('user')
 //            ->where('id','>=', 0)
 //            ->where('id', '<=', 2)
