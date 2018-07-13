@@ -49,8 +49,7 @@ class Index extends Controller
 
           $numCode =  Code::getRandNumCode(4);
 
-//          $param = Request::instance()->param();
-//          $phone = $param['phone'];
+
 //        $response = SmsService::sendSms('11111111111', $numCode);
 //        $code = $response->Code;
 //        $response = json_encode($response);
