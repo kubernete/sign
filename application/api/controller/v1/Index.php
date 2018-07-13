@@ -71,7 +71,6 @@ class Index extends Controller
 
     public function timeGet()
     {
-
         $dd =  file_get_contents('php://input');
         $dd = json_decode($dd);
         return $dd;
