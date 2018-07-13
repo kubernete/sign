@@ -18,6 +18,7 @@ use app\lib\FileUpload;
 use app\lib\processor\OAuthProcessor;
 use app\lib\Time;
 use think\Controller;
+use think\Db;
 use think\Request;
 
 class Test extends Controller
@@ -67,6 +68,7 @@ class Test extends Controller
      */
     public function comment()
     {
+        Db::order();
         $newsId = input('param.id', 0, 'intval');
         if (empty($newsId)){
             throw new BaseException([
